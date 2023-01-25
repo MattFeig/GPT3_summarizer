@@ -5,7 +5,7 @@ from PIL import Image
 from pytesseract import pytesseract
 import openai
 
-def summarizer(arguments):
+def abstract_summarizer(arguments):
     openai.api_key = os.getenv("OPENAI_API_KEY")
     image_path = arguments[0]
     img = Image.open(image_path)
@@ -17,4 +17,4 @@ def summarizer(arguments):
     print(text)
 
 if __name__ == '__main__':
-    sys.exit(summarizer(sys.argv[1:]))
+    sys.exit(abstract_summarizer(sys.argv[1:]))
